@@ -25,9 +25,10 @@ jobs:
     - name: install dependency
       run: |
         npm install
-        npx webpack
-        yarn add -D webpack-cli
 
-    - name: Build
-      run: npm run build
+    - name: Build app
+      run: |
+        npm run build
+        yarn global add serve
+        serve -s build
         
