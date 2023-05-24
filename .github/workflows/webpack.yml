@@ -28,9 +28,16 @@ jobs:
 
     - name: Build app
       run: npm run build
-    - name: Deploy app
+    
+    - name: Deploy
       run: |
-        git config --global user.email "syafawi666@gmail.com"
-        git config --global user.name "achmadsyafawi"
+        git config --global user.name $user_name
+        git config --global user.email $user_email
+        git remote set-url origin https://${github_token}@github.com/${repository}
         npm run deploy
+      env:
+        user_name: 'achmadSyafawi'
+        user_email: 'syafawi666@gmail.com'
+        github_token: ${{ secrets.ACTIONS_SECRET_DEPLOYMENT }}
+        repository: ${{ github.repository }}
         
