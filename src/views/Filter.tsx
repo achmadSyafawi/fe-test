@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { useQuery } from "@tanstack/react-query";
@@ -22,7 +22,6 @@ export default function Filter({ handleOnFilter }: any) {
     isLoading,
     error,
     data: genre,
-    refetch,
   } = useQuery({
     queryKey: ["genre"],
     queryFn: () => fetchGenreMovies(),
@@ -63,6 +62,7 @@ export default function Filter({ handleOnFilter }: any) {
                   >
                     <div>
                       <a
+                        href="/#"
                         test-id="filter-genre"
                         data-id={item.id}
                         className="font-semibold text-gray-900"

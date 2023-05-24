@@ -1,5 +1,4 @@
 import React from "react";
-import { JSX } from "react/jsx-runtime";
 
 export default function ProductItem({ data }: any) {
   let listItem = data.results;
@@ -28,9 +27,9 @@ export default function ProductItem({ data }: any) {
         | React.ReactPortal
         | null
         | undefined;
-    }) => {
+    }) =>
       content.push(
-        <a key={value.id} className="group">
+        <a href="/#" key={value.id} className="group">
           <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
             <img
               src={`https://www.themoviedb.org/t/p/w440_and_h660_face${value.poster_path}`}
@@ -43,8 +42,7 @@ export default function ProductItem({ data }: any) {
             {value.overview}
           </p>
         </a>
-      );
-    }
+      )
   );
   return content ? <>{content}</> : <div>not found</div>;
 }
