@@ -31,6 +31,6 @@ jobs:
     - name: Deploy app
       run: |
         git config --global user.email "syafawi666@gmail.com"
-        git config --global user.name "achmadsyafawi"
+        git config --global user.name "achmadSyafawi"
         npm run deploy
         
