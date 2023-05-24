@@ -35,7 +35,10 @@ export default function Filter({ handleOnFilter }: any) {
   return (
     <Popover className="relative">
       <div className="flex space-x-8">
-        <Popover.Button className="inline-flex items-center gap-x-2 text-sm font-semibold leading-6 text-gray-900">
+        <Popover.Button
+          test-id="button-genre"
+          className="inline-flex items-center gap-x-2 text-sm font-semibold leading-6 text-gray-900"
+        >
           <span>Genre</span>
           <ChevronDownIcon className="h-5 w-5" aria-hidden="true" />
         </Popover.Button>
@@ -60,6 +63,7 @@ export default function Filter({ handleOnFilter }: any) {
                   >
                     <div>
                       <a
+                        test-id="filter-genre"
                         data-id={item.id}
                         className="font-semibold text-gray-900"
                         onClick={(event) => {
