@@ -27,8 +27,7 @@ jobs:
         npm install
 
     - name: Build app
-      run: |
-        npm run build
-        yarn global add serve
-        serve -s build
+      run: npm run build
+    - name: deploy app
+      run: npm run deploy
         

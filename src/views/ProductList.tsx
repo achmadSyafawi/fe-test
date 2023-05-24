@@ -88,6 +88,7 @@ export default function ProductList() {
               autoComplete="off"
               onChange={handleOnChange}
               onKeyDown={handleOnKeyDown}
+              test-id="input-search"
             />
           </div>
         </div>
